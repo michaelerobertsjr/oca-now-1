@@ -47,7 +47,7 @@ jobs:
                 command: now -t ${NOW_TOKEN}
 workflows:
     version: 2
-    test:
+    build-deploy:
         jobs:
             - checkout
             - unit-test:
