@@ -37,6 +37,14 @@ jobs:
             - run:
                 name: Unit Test
                 command: npm run test
+    deploy:
+        <<: *defaults
+        steps:
+            - attach_workspace:
+                at: ~/tmp/circlci-now
+            - run:
+                name: Deploy to Now
+                command: now -t ${NOW_TOKEN}
 workflows:
     version: 2
     test:
@@ -45,3 +53,9 @@ workflows:
             - unit-test:
                 requires:
                     - checkout
+            - deploy:
+                requires:
+                    - unit-test
+                filters:
+                    branches:
+                    only: master

@@ -1,3 +1,6 @@
 {
-    "name": "oca-now-1"
+    "name": "oca-now-1",
+    "alias": [
+        "oca-now-1"
+      ]
 }
