@@ -24,7 +24,7 @@ jobs:
       - checkout
       - run:
           name: Install Now
-          command: sudo npm i -g now
+          command: sudo npm install --global --unsafe-perm now
       - run:
           name: Deploy using Now
           command: now -t ${NOW_TOKEN}
